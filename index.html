@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>JS Quiz by Terry Kim</title>
     <link rel="stylesheet" href="./assets/style.css">
 </head>
@@ -23,8 +25,8 @@
             </div>
         </div>
         <div id="scoreContainer" style="display: none">
-            <div id="retry">Retry?</div>
-            <div id="save">Save Highscore?</div>
+            <div id="retry" onclick="restart()">Retry?</div>
+            <div id="save" onclick="userscore()">Save Highscore?</div>
         </div>
     </div>
     <script src="./assets/script.js"></script>

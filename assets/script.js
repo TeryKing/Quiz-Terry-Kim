@@ -47,7 +47,6 @@ const gaugeWidth = 150; // 150px
 const gaugeUnit = gaugeWidth / questionTime;
 let TIMER;
 let score = 0;
-let highscore = 0;
 
 // render a question
 function renderQuestion(){
@@ -138,28 +137,23 @@ function scoreRender(){
     // calculate the amount of question percent answered by the user
     const scorePerCent = Math.round(100 * score/questions.length);
     scoreDiv.innerHTML += "<p>"+ scorePerCent +"%</p>";
-	// if(score>highscore)
-	// {
-	// 	highscore=score;
-	// }
-	retry.addEventListener("click",restart);
 }
-
 
 function restart()
 {
-	runningQuestion = 0;
-	count = 100;
-	score = 0;
-	scoreDiv.style.display = "none";
-	startQuiz();
-	
+    console.log(retry);
+	 runningQuestion = 0;
+	 count = 100;
+	 score = 0;
+	 scoreDiv.style.display = "none";
+	 startQuiz();
 }
 
+retry.addEventListener("click",restart);
 
+save.addEventListener("click", Userscore);
 
-// save.addEventListener("click", Userscore);
+function Userscore{
+	localStorage.setItem("High Score", score);
+}
 
-// function Userscore{
-// 	localStorage.setItem(HI-Score,Userscore);
-// }
