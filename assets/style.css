@@ -2,17 +2,16 @@ html
 {
 	background-image: linear-gradient(to bottom right, cornflowerblue,aquamarine);
 	min-height: 100%;
-
 }
 
 body{
-    font-size: 20px;
+    font-size: 22px;
     font-family: monospace;
 }
 
 #container
 {
-    margin : 20px auto;
+    margin : 15px auto;
     background-color: white;
     height: 300px;
     width : 700px;
@@ -23,7 +22,7 @@ body{
 
 #start
 {
-    font-size: 1.5em;
+    font-size: 30px;
     font-weight: bolder;
     word-break: break-all;
     width:100px;
@@ -39,7 +38,7 @@ body{
 
 #start:hover
 {
-    border: 3px solid black;
+    border: 4px solid black;
     color : black;
 }
 
@@ -55,12 +54,13 @@ body{
 #question p
 {
     margin : 0;
-    padding : 15px;
-    font-size: 1.25em;
+    padding : 18px;
+    font-size: 35px;
 }
 
 #choices
 {
+    color: blueviolet;
 	display: flex;
 	flex-direction: column;
     width : 480px;
@@ -98,10 +98,10 @@ body{
 
 #counter
 {
-    font-size: 3em;
+    font-size: 30px;
 }
 
-#btimeGauge
+#timeGaugespace
 {
     width : 150px;
     height : 10px;
@@ -114,30 +114,9 @@ body{
 {
     height : 10px;
     border-radius: 10px;
-    background-color: mediumseagreen;
+    background-color: rgb(43, 194, 111);
     margin-top : -10px;
     margin-left : 25px;
-}
-
-#progress
-{
-    width : 500px;
-    position: absolute;
-    bottom : 0px;
-    right : 0px;
-    padding:5px;
-    text-align: right;
-}
-
-.prog
-{
-    width : 25px;
-    height : 25px;
-    border: 1px solid #000;
-    display: inline-block;
-    border-radius: 50%;
-    margin-left : 5px;
-    margin-right : 5px;
 }
 
 #scoreContainer
@@ -160,7 +139,7 @@ body{
     height :59px;
     top:130px;
     left:325px;
-    font-size: 1.5em;
+    font-size: 30px;
     font-weight: bold;
     text-align: center;
 }
@@ -172,7 +151,7 @@ body{
 	flex-direction: column;
     text-align: center;
     cursor: pointer;
-    color : lightgrey;
+    color : white;
 }
 
 #retry:hover
@@ -184,10 +163,9 @@ body{
 {
 	display: flex;
 	flex-direction: column;
-
     text-align: center;
     cursor: pointer;
-    color : lightgrey;
+    color : white;
 }
 
 #save:hover
@@ -195,6 +173,28 @@ body{
     color : black;
 }
 
+.initialsinput
+{
+    color: black;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-weight: bold;
+}
+
+#initials
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 150px;
+    min-height: 30px;
+    
+}
 
 
 

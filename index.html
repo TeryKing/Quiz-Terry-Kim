@@ -13,20 +13,28 @@
         <div id="quiz" style="display: none">
             <div id="question"></div>
             <div id="choices">
-                <div class="choice" id="A" onclick="checkAnswer('A')"></div>
-                <div class="choice" id="B" onclick="checkAnswer('B')"></div>
-                <div class="choice" id="C" onclick="checkAnswer('C')"></div>
-                <div class="choice" id="D" onclick="checkAnswer('D')"></div>
+                <!--Put onclick to call function check to check if the chosen answer is correct-->
+                <div class="choice" id="A" onclick="check('A')"></div>
+                <div class="choice" id="B" onclick="check('B')"></div>
+                <div class="choice" id="C" onclick="check('C')"></div>
+                <div class="choice" id="D" onclick="check('D')"></div>
             </div>
             <div id="timer">
                 <div id="counter"></div>
-                <div id="btimeGauge"></div>
+                <div id="timeGaugespace"></div>
                 <div id="timeGauge"></div>
             </div>
         </div>
+        <!--The score screen is set to hide until the quiz is over. Same applies with the function restart and userscore, it will be called upon click-->
         <div id="scoreContainer" style="display: none">
             <div id="retry" onclick="restart()">Retry?</div>
-            <div id="save" onclick="userscore()">Save Highscore?</div>
+            <br>
+            <div class="initialsinput">
+                <label for="initialsbox">Enter Your initials then click save for your highscore!</label>
+                <input type="text" name="initialsbox" id="initials" placeholder="Write Your Initials!" />
+            </div>
+            <div id="save" onclick="userscore()">Save!</div>
+            <div id="rescorecontainer"></div>
         </div>
     </div>
     <script src="./assets/script.js"></script>
