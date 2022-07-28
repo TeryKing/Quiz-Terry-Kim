@@ -12,6 +12,8 @@ const scoreDiv = document.getElementById("scoreContainer");
 const retry = document.getElementById("retry");
 const save = document.getElementById("save");
 const rescoreDiv = document.getElementById("rescorecontainer");
+const submitbutton = document.getElementById("submitbtn");
+const initialsinput = document.getElementById("initials");
 
 // Creating the questions to a variable
 let questions = [
@@ -61,7 +63,10 @@ function renderQuestion(){
 	choiceD.innerHTML = q.choiceD;
 }
 //Putting a eventlistener for when user clicks on Start
-start.addEventListener("click",startQuiz);
+if(start){
+    start.addEventListener("click",startQuiz);
+}
+
 
 
 //Function starts the quiz and removes the starting block and adding a quiz block, calls the renderquestion function and rendercounter and puts the timer with intervals of 1 second
@@ -153,12 +158,35 @@ function restart()
 	 scoreDiv.style.display = "none";
      startQuiz();
 }
+if(retry){
+    retry.addEventListener("click",restart);
+}
 
-retry.addEventListener("click",restart);
 
  function userscore()
  {
- 	localStorage.setItem("User", scorePerCent);
+    localStorage.setItem("Score",scorePerCent);
+ 	window.open("./assets/highscoredisplay.html","_blank");
  }
+ if(save){
+    save.addEventListener("click", userscore);
+}
 
- save.addEventListener("click", userscore);
+if(submitbutton){
+    submitbutton.addEventListener("click", scoredisplay);
+}
+
+console.log(submitbutton);
+function scoredisplay()
+{   
+
+    var currentscores = localStorage.getItem("Score");
+    console.log(initialsinput.value);
+    
+    console.log(currentscores.value);
+
+}
+
+
+
+

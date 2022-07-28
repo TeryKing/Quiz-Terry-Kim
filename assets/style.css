@@ -195,6 +195,25 @@ body{
     min-height: 30px;
     
 }
+#hiscorecontainer
+{
+    margin : 15px auto;
+    background-color: white;
+    height: 300px;
+    width : 700px;
+    border-radius: 5px;
+    position: relative;
+	border: solid black 10px;
+}
 
-
+#totals
+{
+    font-size: 30px;
+    font-weight: bolder;
+    word-break: break-all;
+    width:100%;
+    text-align: center;
+    border : 2px solid lightgrey;
+    color : lightgrey;
+}
 
