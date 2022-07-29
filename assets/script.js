@@ -60,8 +60,8 @@ let questions = [
 let timerinterval = 5;
 const lastQuestion = questions.length - 1;
 let runningQuestion = 0;
-let count = 100;
-const questionTime = 100; 
+let count = 30;
+const questionTime = 30; 
 const gaugeWidth = 150; 
 const gaugeUnit = gaugeWidth / questionTime;
 let TIMER;
@@ -223,4 +223,3 @@ if(submitbutton)
     }
     tablescore.innerHTML = firsthtmlstring + tablestringlist;
 }
-
