@@ -14,29 +14,30 @@ const save = document.getElementById("save");
 const rescoreDiv = document.getElementById("rescorecontainer");
 const submitbutton = document.getElementById("submitbtn");
 const initialsinput = document.getElementById("initials");
+const tablescore = document.getElementById("highscoretable");
 
 // Creating the questions to a variable
 let questions = [
     {
         question : "What does HTML stand for?",
-        choiceA : "Correct",
-        choiceB : "Wrong",
-        choiceC : "Wrong",
-		choiceD : "Wrong",
+        choiceA : "HyperText Markup Language",
+        choiceB : "How To Make Legos",
+        choiceC : "Hyperforce Technical Making Language",
+		choiceD : "High Text Missing Language",
         correct : "A"
     },{
         question : "What does CSS stand for?",
-        choiceA : "Wrong",
-        choiceB : "Correct",
-        choiceC : "Wrong",
-		choiceD : "Wrong",
+        choiceA : "Colorful Style Sheets",
+        choiceB : "Cascading Style Sheets",
+        choiceC : "Contains Small Snacks",
+		choiceD : "Computer Style Sheets",
         correct : "B"
     },{
         question : "What does JS stand for?",
-        choiceA : "Wrong",
-        choiceB : "Wrong",
-        choiceC : "Correct",
-		choiceD : "Wrong",
+        choiceA : "Jalepeno Smudges",
+        choiceB : "JobScript",
+        choiceC : "JavaScript",
+		choiceD : "JimmyScript",
         correct : "C"
     }
 ];
@@ -46,8 +47,8 @@ let timerinterval = 5;
 const lastQuestion = questions.length - 1;
 let runningQuestion = 0;
 let count = 100;
-const questionTime = 100; // 10s
-const gaugeWidth = 150; // 150px
+const questionTime = 100; 
+const gaugeWidth = 150; 
 const gaugeUnit = gaugeWidth / questionTime;
 let TIMER;
 let score = 0;
@@ -179,14 +180,32 @@ if(submitbutton){
 console.log(submitbutton);
 function scoredisplay()
 {   
-
+    var arraylist = JSON.parse(localStorage.getItem("highscorelist")) || []
     var currentscores = localStorage.getItem("Score");
-    console.log(initialsinput.value);
-    
-    console.log(currentscores.value);
-
+    var Tablelist = 
+    {
+        initals:initialsinput.value,
+        score:currentscores
+    };
+    if(arraylist.length > 7)
+    {
+        arraylist.shift();
+    }
+    arraylist.push(Tablelist)
+    localStorage.setItem("highscorelist",JSON.stringify(arraylist));
+    location.reload();
 }
 
+var firsthtmlstring = "<tr><th>Initials</th><th>Scores</th></tr>";
 
-
+if(submitbutton)
+{
+    var highscorelist = JSON.parse(localStorage.getItem("highscorelist"));
+    var tablestringlist = "";
+    for(var i = 0; i < highscorelist.length; i++)
+    {
+        tablestringlist += "<tr><td>" + highscorelist[i].initals + "</td><td>" + highscorelist[i].score + "</td></tr>";
+    }
+    tablescore.innerHTML = firsthtmlstring + tablestringlist;
+}
 
