@@ -39,6 +39,20 @@ let questions = [
         choiceC : "JavaScript",
 		choiceD : "JimmyScript",
         correct : "C"
+    },{
+        question : "What does JSON stand for?",
+        choiceA : "Jason Derulo",
+        choiceB : "JavaScript On Notation",
+        choiceC : "JavaScript Object Notation",
+		choiceD : "Jimmy's Super Object Notion",
+        correct : "C"
+    },{
+        question : "What does Var mean?",
+        choiceA : "Variable",
+        choiceB : "Video Assistant Referee",
+        choiceC : "Virtual Assisted Reader",
+		choiceD : "Video Aimed Reference",
+        correct : "A"
     }
 ];
 
@@ -63,12 +77,11 @@ function renderQuestion(){
     choiceC.innerHTML = q.choiceC;
 	choiceD.innerHTML = q.choiceD;
 }
+
 //Putting a eventlistener for when user clicks on Start
 if(start){
     start.addEventListener("click",startQuiz);
 }
-
-
 
 //Function starts the quiz and removes the starting block and adding a quiz block, calls the renderquestion function and rendercounter and puts the timer with intervals of 1 second
 function startQuiz(){
@@ -81,7 +94,6 @@ function startQuiz(){
 
 
 //Function for counting the timer, if theres still time, then timer will tick down by 1 second and change the gauge accordingly.
-
 function renderCounter(){
     if(count > 0)
 	{
@@ -98,7 +110,6 @@ function renderCounter(){
 
 
 //check function is for "onclick" in the index.html. This function will see whether the selected choice was the correct choice from the questions.
-
 function check(answer){
     if( answer == questions[runningQuestion].correct)
 	{
@@ -149,6 +160,7 @@ function scoreRender(){
     scorePerCent = Math.round(100 * score/questions.length);
     rescoreDiv.innerHTML = "<p>"+ scorePerCent +"%</p>";
 }
+
 //The following function is just a restart function, this will set the question back to the first question, set the count timer back to 100 seconds, the current score of correct answers to 0.
 //then rehides the score screen, then calls the StartQuiz function to restart the quiz.
 function restart()
@@ -159,11 +171,12 @@ function restart()
 	 scoreDiv.style.display = "none";
      startQuiz();
 }
+
 if(retry){
     retry.addEventListener("click",restart);
 }
 
-
+//The following function and eventlistener is for when the user clicks the "save" button, they score their score for the quiz and sends the user to another html that displays the scores.
  function userscore()
  {
     localStorage.setItem("Score",scorePerCent);
@@ -173,11 +186,12 @@ if(retry){
     save.addEventListener("click", userscore);
 }
 
+//The following function and event listener is for creating an array for the user to store their score and their initials then it will push the stored score and initials onto the list
+//Then the browser reloads to see the new added score and initials. However it will remove the first array in order to prevent overloading the entire html with initials and scores.
 if(submitbutton){
     submitbutton.addEventListener("click", scoredisplay);
 }
 
-console.log(submitbutton);
 function scoredisplay()
 {   
     var arraylist = JSON.parse(localStorage.getItem("highscorelist")) || []
@@ -196,6 +210,7 @@ function scoredisplay()
     location.reload();
 }
 
+//This is to display the score upon pressing the submit button.
 var firsthtmlstring = "<tr><th>Initials</th><th>Scores</th></tr>";
 
 if(submitbutton)
@@ -204,7 +219,7 @@ if(submitbutton)
     var tablestringlist = "";
     for(var i = 0; i < highscorelist.length; i++)
     {
-        tablestringlist += "<tr><td>" + highscorelist[i].initals + "</td><td>" + highscorelist[i].score + "</td></tr>";
+        tablestringlist += "<tr><td>" + highscorelist[i].initals + "</td><td>" + highscorelist[i].score + "%" + "</td></tr>";
     }
     tablescore.innerHTML = firsthtmlstring + tablestringlist;
 }

@@ -1,14 +1,15 @@
+/*Initial background color for styling purposes*/
 html
 {
 	background-image: linear-gradient(to bottom right, cornflowerblue,aquamarine);
 	min-height: 100%;
 }
-
+/*Basic font size and family*/
 body{
     font-size: 22px;
     font-family: Arial, Helvetica, sans-serif;
 }
-
+/*This container is for the main box of the html quiz*/
 #container
 {
     margin : 15px auto;
@@ -20,7 +21,7 @@ body{
 	border: solid black 10px;
     margin-top: 200px;
 }
-
+/*This is the start button's styling*/
 #start
 {
     font-size: 30px;
@@ -35,12 +36,12 @@ body{
     top:50px;
     color : lightgrey;
 }
-
+/*Hover function for Start so that the user can see clearly*/
 #start:hover
 {
     color : black;
 }
-
+/*Just position and paddings and changes for questions*/
 #question
 {
     width:500px;
@@ -56,7 +57,7 @@ body{
     padding : 18px;
     font-size: 35px;
 }
-
+/*This styling is for the choices for the quiz questions, put a different color for easier distiction and put a flex box for it to fit within its container*/
 #choices
 {
     color: blueviolet;
@@ -70,7 +71,7 @@ body{
     padding : 10px;
     font-weight: bold;
 }
-
+/*Same as above except this is the actual box for the text*/
 .choice
 {
     display: inline-block;
@@ -81,13 +82,13 @@ body{
     cursor: pointer;
     padding : 5px;
 }
-
+/*Hover styling to ensure user is choosing their answer*/
 .choice:hover
 {
     border : 2px solid grey;
     font-weight: bolder;
 }
-
+/*Timer position*/
 #timer
 {
     position: absolute;
@@ -96,12 +97,12 @@ body{
     bottom : 0px;
     text-align: center;
 }
-
+/*Counter text size*/
 #counter
 {
     font-size: 30px;
 }
-
+/*This is the the faux timer gauge that is behind the actual timer gauge to make it look like its "draining"*/
 #timeGaugespace
 {
     width : 150px;
@@ -109,7 +110,7 @@ body{
     background-color: lightgray;
     margin-left : 25px;
 }
-
+/*Actual timer gauge for user to physically look at the time ticking down*/
 #timeGauge
 {
     height : 10px;
@@ -117,7 +118,7 @@ body{
     margin-top : -10px;
     margin-left : 25px;
 }
-
+/*This is the container that pops out after the quiz is over.*/
 #scoreContainer
 {
     margin : 20px auto;
@@ -129,7 +130,7 @@ body{
     position: relative;
     display: none;
 }
-
+/*Just text positions for score*/
 #scoreContainer p
 {
     position: absolute;
@@ -143,7 +144,7 @@ body{
     text-align: center;
 }
 
-
+/*The retry button's styling*/
 #retry
 {
 	display: flex;
@@ -152,12 +153,12 @@ body{
     cursor: pointer;
     color : white;
 }
-
+/*Hover styling for retry so user doesnt click the wrong thing*/
 #retry:hover
 {
     color : black;
 }
-
+/*Same as retry button but for save*/
 #save
 {
 	display: flex;
@@ -166,12 +167,12 @@ body{
     cursor: pointer;
     color : white;
 }
-
+/*Same hover styling*/
 #save:hover
 {
     color : black;
 }
-
+/*The following css styling is for the second html which leds the users into the High Score Display which is noted as highscoredisplay.html*/
 .initialsinput
 {
     color: black;
@@ -214,7 +215,7 @@ body{
     text-align: center;
     color : black;
 }
-
+/*Button styling*/
 #submitbtn
 {
     
@@ -227,7 +228,7 @@ body{
     margin-right: auto;
 
 }
-
+/*The displayed scores positioning*/
 #highscoretable
 {
     display: flex;
