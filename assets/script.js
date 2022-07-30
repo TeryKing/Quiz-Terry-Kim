@@ -115,16 +115,6 @@ function check(answer){
 	{
         //If the answer is correct, then it will add points to the score
         score++;
-        //If the current question is not the last question, then it renders the next question. Using numeric values to generate which question is which.
-		if(runningQuestion < lastQuestion){
-			runningQuestion++;
-			renderQuestion();
-		}
-		else{
-			//Otherwise if it is the last question, the timer is cleared and quiz ends.
-			clearInterval(TIMER);
-			scoreRender();
-		}
     }
 	else{
         //If the selected choice is incorrect, then the if statement will follow as.
@@ -149,6 +139,20 @@ function check(answer){
 		clearInterval(TIMER);
 		scoreRender();
 	}
+
+    else
+    {
+            //If the current question is not the last question, then it renders the next question. Using numeric values to generate which question is which.
+		if(runningQuestion < lastQuestion){
+			runningQuestion++;
+			renderQuestion();
+		}
+		else{
+			//Otherwise if it is the last question, the timer is cleared and quiz ends.
+			clearInterval(TIMER);
+			scoreRender();
+		}   
+    }
   
 }
 
@@ -166,7 +170,7 @@ function scoreRender(){
 function restart()
 {
 	 runningQuestion = 0;
-	 count = 100;
+	 count = 30;
 	 score = 0;
 	 scoreDiv.style.display = "none";
      startQuiz();
